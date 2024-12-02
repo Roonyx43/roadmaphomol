@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(#ffffff, #cccccc);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1{
+  user-select: none;
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  background-color: #538fff;
+  color: white;
+  padding:20px;
+  box-shadow: 0px 1px 2px 0px black;
+}
+
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  max-width: 600px;
+  text-align: start;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+strong{
+  color: #538fff;
+}
+
+header>h1:hover{
+  transform: translate(-2px, -1px);
+  text-shadow: 0px 1px 2px black;
+  transition: 0.2s;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 40px
+}
+nav>a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav>a:hover{
+  transform: translate(-2px, -1px);
+  text-shadow: 0px 1px 2px black;
+  transition: 0.2s;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+details {
+
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilização geral dos checkboxes */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo ao marcar o checkbox */
+input[type="checkbox"]:checked {
+  background-color: #538fff;
+  border-color: #538fff;
+}
+
+/* Ícone de seleção no checkbox */
+input[type="checkbox"]:checked::after {
+  content: '✔';
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilo do texto do summary */
+.sumario1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Remove marcador padrão do summary */
+.sumario1::-webkit-details-marker {
+  display: none;
+}
+
+/* Ícone animado no summary */
+.sumario1::after {
+  content: '⮟';
+  color: gray;
+  font-size: 25px;
+  transition: transform 0.3s ease;
+}
+
+.subtitle, .subtitle2, .subtitle3, .subtitle4, .subtitle5, .subtitle6{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.subtitle::after, .subtitle2::after, .subtitle3::after, .subtitle4::after, .subtitle5::after, .subtitle6::after{
+  content:'⮟';
+  transition: transform 0.3s ease;
+}
+
+summary{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+details[open] .sumario1::after {
+  transform: rotate(180deg);
+}
+
+.conteudo1[open] .subtitle::after, .conteudo2[open] .subtitle2::after, .conteudo3[open] .subtitle3::after, .conteudo4[open] .subtitle4::after, .conteudo5[open] .subtitle5::after, .conteudo6[open] .subtitle6::after{
+  transform: rotate(180deg);
+}
+
+hr{
+  text-align: center;
+  margin-top: 10px;
+  border: 2px solid #538fff;
+  width: 100%;
+}
+
+/* Lista de tarefas */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  user-select: none;
+}
+
+li:hover{
+  transform: translate(-2px, -1px);
+  transition: 0.1s;
+}
+
+/* Labels de tarefas */
+label {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+label:hover {
+  color: #538fff;
+  transition: 0.1s;
+}
+
+/* Div dentro do details */
+details > div {
+  padding: 10px;
+  font-size: 16px;
+  color: #555;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: rgb(100, 100, 100);
+}
+
+.nivel1{
+  min-height: 100vh;
+  max-height: 400vh;
+  height: auto;
+  width: 100%;
+}
+
+.nivel2 {
+  height: 100vh;
+  width: 100%;
+}
+
+.nivel3 {
+  height: 100vh;
+  width: 100%;
+}
+
+.inicio{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inicio>h1{
+  margin-bottom: 180px;
+  text-align: center;
+}
+
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  background-color: #ccc;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+#html-progress-text, #css-progress-text, #js-progress-text, #dom-progress-text, #seo-progress-text, #design-progress-text, #all-progress-text{
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.desafio-html{
+  width: 100%;
+}
+button{
+  width: 100%;
+  background-color: #538fff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.textosDivididos{
+  display: flex;
+  gap: 30px;
+}
